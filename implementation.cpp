@@ -115,8 +115,11 @@ void test(int tc){
             cout close
             cout close
         }
-        sort(all(tables[table_no]));
         cout << "Table #" << table_no+1 << ":" close
+        if(tables[table_no].size() == 0){
+            cout << "This Table is empty!" close
+        }
+        sort(all(tables[table_no]));
         for (int i = 0; i < tables[table_no].size(); ++i) {
             if(i!=0 && tables[table_no][i-1].group_no != tables[table_no][i].group_no) cout close
             cout << tables[table_no][i].group_no << "\t " << print_vec(tables[table_no][i].match_pairs) << "\t " << tables[table_no][i].bin_rep << "\t " << tables[table_no][i].has_pair close
